@@ -44,22 +44,18 @@ def local_histogram_equalization(image, window_size):
 
             # Calcular la función de distribución acumulativa (CDF)
             cdf = hist.cumsum()
-
-            # --- Inicio de la Edición: Normalización de la CDF ---
-            # Eliminar la línea confusa:
-            # cdf_normalized = cdf * hist.max() / cdf.max() # Esta línea era confusa/incorrecta
-
+            
             # Normalizar la CDF al rango [0, 255] para usarla como tabla de mapeo
             # Mascarar ceros para evitar división por cero si todos los píxeles son iguales
             cdf_m = np.ma.masked_equal(cdf, 0)
+            
             # Aplicar la fórmula de normalización: (cdf(v) - cdf_min) * 255 / (total_pixels - cdf_min)
             # Aquí M*N es el número total de píxeles en la ventana
             total_pixels_in_window = M * N
             cdf_m = (cdf_m - cdf_m.min()) * 255 / (total_pixels_in_window - cdf_m.min())
             # Rellenar los valores enmascarados (correspondientes a intensidades no presentes) con 0
             cdf_final = np.ma.filled(cdf_m, 0).astype('uint8')
-            # --- Fin de la Edición ---
-
+        
             # Obtener el valor del píxel central en la ventana original (imagen con padding)
             center_pixel_intensity = padded_image[i + pad_M, j + pad_N]
 

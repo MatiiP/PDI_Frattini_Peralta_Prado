@@ -1,0 +1,6 @@
+# En caso de llamar de forma distinta al entorno, agregarlo
+pdi-tp/
+venv/
+
+#cache
+__pycache__/

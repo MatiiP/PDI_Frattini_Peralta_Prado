@@ -1,9 +1,8 @@
 import cv2
 import matplotlib.pyplot as plt
-from parte1 import local_histogram_equalization # Asegúrate que local_hist_eq.py esté en el mismo directorio o en el PYTHONPATH
+from ejercicio1 import local_histogram_equalization 
 
-# --- Cargar la Imagen ---
-# Reemplaza 'figura1.png' con la ruta real a tu imagen Figura 1
+# Cargar la Imagen
 image_path = 'Imagen_con_detalles_escondidos.tif'
 try:
     original_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
@@ -15,14 +14,12 @@ except FileNotFoundError as e:
 except Exception as e:
     print(f"Ocurrió un error al cargar la imagen: {e}")
     exit()
-
-
-# --- Tamaños de Ventana a Probar ---
-window_sizes = [(3, 3), (15, 15), (51, 51)] # Tamaños de ejemplo, deben ser impares
-
+    
+# Tamaños de Ventana a Probar
+window_sizes = [(3, 3), (15, 15), (51, 51)] 
 processed_images = {}
 
-# --- Aplicar Ecualización Local ---
+# Ecualización Local
 for size in window_sizes:
     print(f"Procesando con ventana {size}...")
     try:
@@ -33,10 +30,8 @@ for size in window_sizes:
     except Exception as e:
         print(f"Error inesperado procesando con ventana {size}: {e}")
 
-
-# --- Mostrar Resultados ---
+# Resultados 
 plt.figure(figsize=(15, 10))
-
 plt.subplot(2, 2, 1)
 plt.imshow(original_image, cmap='gray')
 plt.title('Imagen Original')
@@ -44,7 +39,7 @@ plt.axis('off')
 
 plot_index = 2
 for size, img in processed_images.items():
-    if plot_index <= 4: # Asegurar que no exceda los subplots disponibles
+    if plot_index <= 4: # No nos excedemos de los subplots disponibles
         plt.subplot(2, 2, plot_index)
         plt.imshow(img, cmap='gray')
         plt.title(f'Ecualización Local - Ventana {size}')
@@ -54,7 +49,7 @@ for size, img in processed_images.items():
 plt.tight_layout()
 plt.show()
 
-# --- Análisis (Informe) ---
+# Análisis
 print("\n--- Análisis de Resultados ---")
 print("Observando las imágenes procesadas:")
 print("- Con ventanas pequeñas (ej. 3x3): Se realza mucho el ruido y las texturas muy finas. El contraste local aumenta significativamente, pero puede generar un aspecto 'granulado'.")
