@@ -7,7 +7,7 @@ Integrantes:
 
 ## Cómo Ejecutar los Ejercicios
 
-Los ejercicios se encuentran implementados en Jupyter Notebooks (`.ipynb`) dentro de las carpetas `Ejercicio1` y `Ejercicio2`.
+Los ejercicios se encuentran implementados en Jupyter Notebooks (`.ipynb`) dentro de las carpetas `Ejercicio1` y `Ejercicio2`. También se incluyen versiones en archivos Python (`.py`) que pueden ejecutarse directamente.
 
 **Prerrequisitos:**
 *   Tener Python instalado.
@@ -17,7 +17,7 @@ Los ejercicios se encuentran implementados en Jupyter Notebooks (`.ipynb`) dentr
     pip install opencv-python numpy matplotlib
     ```
 
-**Pasos para ejecutar:**
+**Pasos para ejecutar los notebooks:**
 
 1.  Abre una terminal o línea de comandos.
 2.  Navega hasta el directorio raíz del proyecto (`./PDI_Frattini_Peralta_Prado`).
@@ -33,9 +33,31 @@ Los ejercicios se encuentran implementados en Jupyter Notebooks (`.ipynb`) dentr
 5.  Abre el archivo `.ipynb` correspondiente (`Ejercicio1.ipynb` o `Ejercicio2.ipynb`).
 6.  Puedes ejecutar las celdas individualmente o seleccionar "Run All" en el menú para ejecutar todo el notebook.
 
+**Pasos para ejecutar los archivos Python:**
+
+1.  Abre una terminal o línea de comandos.
+2.  Navega hasta la carpeta del ejercicio correspondiente:
+    ```bash
+    cd Ejercicio1
+    ```
+    o
+    ```bash
+    cd Ejercicio2
+    ```
+3.  Ejecuta el archivo Python directamente:
+    ```bash
+    python Ejercicio1.py
+    ```
+    o
+    ```bash
+    python Ejercicio2.py
+    ```
+
 **Nota:** Los notebooks ya contienen las salidas de las celdas de una ejecución previa, por lo que puedes visualizar los resultados directamente sin necesidad de volver a ejecutarlos.
 
-**Nota:** Tambien pueden simplemente descargar los notebooks y ejecutarlos en un entorno como el de colab, procurando agregar las imagenes a la carpeta de colab.
+**Nota:** También puedes simplemente descargar los notebooks y ejecutarlos en un entorno como el de Colab, procurando agregar las imágenes a la carpeta de Colab.
+
+**Nota:** Los archivos .py contienen el mismo código que los notebooks pero en formato de script de Python, lo que facilita su ejecución en entornos sin soporte para notebooks.
 
 ## Informe
 
